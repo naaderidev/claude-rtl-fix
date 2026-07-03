@@ -1,0 +1,53 @@
+/* Claude RTL Fix v2 - Firefox Edition */
+/* فونت از طریق content.js inject میشه */
+
+.claude-rtl-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+  line-height: 2 !important;
+  letter-spacing: 0 !important;
+}
+
+.claude-rtl-fixed p,
+.claude-rtl-fixed li,
+.claude-rtl-fixed h1,
+.claude-rtl-fixed h2,
+.claude-rtl-fixed h3,
+.claude-rtl-fixed h4,
+.claude-rtl-fixed span:not(code span):not(pre span) {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}
+
+p.claude-rtl-fixed,
+li.claude-rtl-fixed,
+h1.claude-rtl-fixed,
+h2.claude-rtl-fixed,
+h3.claude-rtl-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}
+
+/* کدها LTR بمانند */
+.claude-rtl-fixed code,
+.claude-rtl-fixed pre,
+code.claude-rtl-fixed,
+pre.claude-rtl-fixed {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: normal !important;
+  font-family: 'Courier New', 'Consolas', monospace !important;
+}
+
+.claude-rtl-input-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}

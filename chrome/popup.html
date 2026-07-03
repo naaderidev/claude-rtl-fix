@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>Claude RTL Fix</title>
+  <style>
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('fonts/Vazirmatn-Medium.woff2') format('woff2');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('fonts/Vazirmatn-Bold.woff2') format('woff2');
+      font-weight: 700;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 300px;
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      background: #111318;
+      color: #e8e9ed;
+      direction: rtl;
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: linear-gradient(145deg, #1c1f2e 0%, #161927 100%);
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid #252836;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -30px; left: -30px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(224,123,84,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #e07b54 0%, #c45e39 100%);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(224,123,84,0.35);
+    }
+
+    .header-text h1 {
+      font-size: 15px; font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .header-text p {
+      font-size: 11px; color: #7a7e91;
+      font-weight: 400;
+    }
+
+    .version-badge {
+      margin-right: auto;
+      background: rgba(224,123,84,0.15);
+      color: #e07b54;
+      border: 1px solid rgba(224,123,84,0.3);
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-size: 10px; font-weight: 500;
+    }
+
+    /* ===== STATUS CARD ===== */
+    .status-card {
+      margin: 14px 16px 0;
+      background: #1a1d28;
+      border: 1px solid #252836;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .status-row {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .status-label {
+      font-size: 11px; color: #6b6f82; font-weight: 500;
+    }
+
+    .status-pill {
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(74, 222, 128, 0.1);
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
+    .status-pill.inactive {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.25);
+    }
+
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+
+    .status-pill.inactive .status-dot { background: #ef4444; animation: none; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .status-text {
+      font-size: 11px; color: #4ade80; font-weight: 500;
+    }
+
+    .status-pill.inactive .status-text { color: #ef4444; }
+
+    .divider { height: 1px; background: #252836; margin: 12px 0; }
+
+    /* ===== STATS ROW ===== */
+    .stats-row {
+      display: flex; gap: 10px;
+    }
+
+    .stat-box {
+      flex: 1;
+      background: #111318;
+      border: 1px solid #1e2030;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 22px; font-weight: 700;
+      color: #e07b54;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 10px; color: #555868;
+      margin-top: 2px; font-weight: 400;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      margin: 12px 16px 0;
+    }
+
+    .section-title {
+      font-size: 10px; color: #555868;
+      font-weight: 500; margin-bottom: 8px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    .feature-list {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+
+    .feature-item {
+      display: flex; align-items: center; gap: 8px;
+      background: #1a1d28;
+      border: 1px solid #252836;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12px; color: #c0c3d4;
+    }
+
+    .feature-icon {
+      font-size: 14px; flex-shrink: 0;
+    }
+
+    /* ===== ACTIONS ===== */
+    .actions {
+      padding: 12px 16px 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 11px;
+      border: none; border-radius: 12px;
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e07b54, #c45e39);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(224,123,84,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(224,123,84,0.4);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-primary:disabled {
+      opacity: 0.6; cursor: default; transform: none;
+    }
+
+    /* ===== WARNING ===== */
+    .warning-banner {
+      margin: 0 16px 14px;
+      background: rgba(234,179,8,0.08);
+      border: 1px solid rgba(234,179,8,0.2);
+      border-radius: 10px;
+      padding: 9px 12px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; color: #a89540;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 10px 16px 14px;
+      border-top: 1px solid #1a1d28;
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px;
+      font-size: 10px; color: #33364a;
+    }
+
+    .footer span { color: #e07b54; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-row">
+      <div class="logo">ف</div>
+      <div class="header-text">
+        <h1>Claude RTL Fix</h1>
+        <p>راست‌چین فارسی برای Claude.ai</p>
+      </div>
+      <div class="version-badge">v2.0</div>
+    </div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-row">
+      <span class="status-label">وضعیت افزونه</span>
+      <div class="status-pill" id="statusPill">
+        <div class="status-dot"></div>
+        <span class="status-text" id="statusText">فعال</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-number" id="fixedCount">—</div>
+        <div class="stat-label">المان اصلاح‌شده</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#7c85f5">Vaz</div>
+        <div class="stat-label">فونت وزیرمتن</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features" id="featuresSection">
+    <div class="section-title">قابلیت‌ها</div>
+    <div class="feature-list">
+      <div class="feature-item">
+        <span class="feature-icon">↔️</span>
+        <span>اصلاح جملات ترکیبی فارسی-انگلیسی</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🔠</span>
+        <span>فونت وزیرمتن برای متن‌های فارسی</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">💻</span>
+        <span>کدها LTR می‌مانند</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="warning-banner" id="warningBanner" style="display:none">
+    ⚠️ این صفحه claude.ai نیست — افزونه فعال نمی‌شود
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" id="reprocessBtn">
+      <span id="btnIcon">🔄</span>
+      <span id="btnText">اعمال مجدد RTL</span>
+    </button>
+  </div>
+
+  <div class="footer">
+    ساخته شده با <span>♥</span> برای بهار
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

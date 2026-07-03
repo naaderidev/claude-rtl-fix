@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "Claude RTL Fix - فارسی راحت",
+  "version": "2.0.0",
+  "description": "متن فارسی در Claude.ai را با فونت وزیرمتن، راست‌چین و خوانا نمایش می‌دهد",
+  "author": "Bahar",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://claude.ai/*"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "claude-rtl-fix@bahar",
+      "strict_min_version": "109.0"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    "fonts/*.woff2"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Claude RTL Fix"
+  },
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

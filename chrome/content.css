@@ -1,0 +1,77 @@
+/* Claude RTL Fix v2 - Vazirmatn Edition */
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url(chrome-extension://__MSG_@@extension_id__/fonts/Vazirmatn-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url(chrome-extension://__MSG_@@extension_id__/fonts/Vazirmatn-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url(chrome-extension://__MSG_@@extension_id__/fonts/Vazirmatn-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* المان‌هایی که فارسی دارن */
+.claude-rtl-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+  line-height: 2 !important;
+  letter-spacing: 0 !important;
+}
+
+.claude-rtl-fixed p,
+.claude-rtl-fixed li,
+.claude-rtl-fixed h1,
+.claude-rtl-fixed h2,
+.claude-rtl-fixed h3,
+.claude-rtl-fixed h4,
+.claude-rtl-fixed span:not(code span):not(pre span) {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}
+
+/* وقتی پاراگراف مستقیم RTL شده */
+p.claude-rtl-fixed,
+li.claude-rtl-fixed,
+h1.claude-rtl-fixed,
+h2.claude-rtl-fixed,
+h3.claude-rtl-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}
+
+/* کدها LTR بمانند */
+.claude-rtl-fixed code,
+.claude-rtl-fixed pre,
+code.claude-rtl-fixed,
+pre.claude-rtl-fixed {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: normal !important;
+  font-family: 'Courier New', 'Consolas', monospace !important;
+}
+
+/* اینپوت RTL */
+.claude-rtl-input-fixed {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed !important;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif !important;
+}
