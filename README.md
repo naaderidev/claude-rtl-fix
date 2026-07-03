@@ -1,4 +1,4 @@
-# Claude RTL Fix 🇮🇷
+# Claude RTL Fix
 
 > A browser extension that makes Persian text on [Claude.ai](https://claude.ai) actually readable — right-to-left aligned, properly rendered, and displayed in the beautiful **Vazirmatn** font.
 
@@ -24,7 +24,7 @@ Available for both **Google Chrome** and **Mozilla Firefox**.
 
 ### Step 1 — Download
 
-Click the green **Code** button on this page → **Download ZIP**, then extract it. You'll get a folder called `claude-rtl-fix`.
+Click the green **Code** button on this page → **Download ZIP**, then extract it. You'll get a folder called `claude-rtl-fix-main`.
 
 ### Step 2 — Open Chrome Extensions
 
