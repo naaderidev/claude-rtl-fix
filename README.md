@@ -77,8 +77,6 @@ chrome://extensions
 
 In the top-right corner of the Extensions page, toggle on **Developer mode**.
 
-![Developer mode toggle in the top-right corner](https://i.imgur.com/placeholder-chrome-dev.png)
-
 ### Step 4 — Load the Extension
 
 Click **"Load unpacked"** → navigate into the downloaded folder → select the **`chrome`** folder (not the zip, not the root folder — the `chrome` subfolder).
