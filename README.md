@@ -20,45 +20,6 @@ Available for both **Google Chrome** and **Mozilla Firefox**.
 
 ---
 
-## 📁 Repository Structure
-
-```
-claude-rtl-fix/
-├── chrome/               # Google Chrome extension
-│   ├── manifest.json
-│   ├── content.js
-│   ├── content.css
-│   ├── popup.html
-│   ├── popup.js
-│   ├── fonts/
-│   │   ├── Vazirmatn-Regular.woff2
-│   │   ├── Vazirmatn-Medium.woff2
-│   │   └── Vazirmatn-Bold.woff2
-│   └── icons/
-│       ├── icon16.png
-│       ├── icon48.png
-│       └── icon128.png
-│
-├── firefox/              # Mozilla Firefox extension
-│   ├── manifest.json
-│   ├── content.js
-│   ├── content.css
-│   ├── popup.html
-│   ├── popup.js
-│   ├── fonts/
-│   │   ├── Vazirmatn-Regular.woff2
-│   │   ├── Vazirmatn-Medium.woff2
-│   │   └── Vazirmatn-Bold.woff2
-│   └── icons/
-│       ├── icon16.png
-│       ├── icon48.png
-│       └── icon128.png
-│
-└── README.md
-```
-
----
-
 ## 🟡 Installation — Google Chrome
 
 ### Step 1 — Download
